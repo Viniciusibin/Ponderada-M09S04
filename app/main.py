@@ -7,7 +7,7 @@ import time
 import uuid
 import logging
 from contextlib import asynccontextmanager
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional
 
 from fastapi import Depends, FastAPI, HTTPException, Query, Request, Response
@@ -70,7 +70,7 @@ async def correlation_id_middleware(request: Request, call_next):
             "correlation_id": correlation_id,
             "method": request.method,
             "path": request.url.path,
-            "timestamp": datetime.utcnow().isoformat(),
+            "timestamp": datetime.now(timezone.utc).isoformat(),
         },
     )
     start = time.time()
@@ -161,7 +161,7 @@ def login(credentials: LoginRequest):
     ):
         raise HTTPException(status_code=401, detail="Credenciais inválidas")
     token = jwt.encode(
-        {"sub": credentials.username, "exp": datetime.utcnow() + timedelta(hours=1)},
+        {"sub": credentials.username, "exp": datetime.now(timezone.utc) + timedelta(hours=1)},
         SECRET_KEY,
         algorithm=ALGORITHM,
     )

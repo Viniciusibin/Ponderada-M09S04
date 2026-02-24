@@ -15,10 +15,14 @@ Documentos focados em **código** e **verificação de qualidade** para o projet
 | [02-estrategia-massa-testes.md](02-estrategia-massa-testes.md) | Estratégia de testes; técnicas de projeto (equivalência, fronteira); massa de dados; casos de teste para BD1 e BD2. | 4,0 |
 | [03-codificacao-documentacao-testes.md](03-codificacao-documentacao-testes.md) | Codificação como documentação (constantes, AAA, nomes, rastreabilidade); tabelas requisito ↔ teste ↔ asserção para BD1 e BD2. | 3,0 |
 
-## Direcionadores em foco
+## Os dois direcionadores de negócio em foco
 
-- **Pelo menos 2 direcionadores** detalhados nos documentos 02 e 03: **Volumetria (BD1)** e **Rastreabilidade (BD2)**.
-- O mapa (01) cobre os **quatro** drivers: Volumetria, Rastreabilidade, Acesso Simultâneo e Segurança.
+Os **dois direcionadores de negócio** desta atividade são:
+
+1. **Volumetria (BD1)** — listagem paginada; limite por página; eager loading. Suite: `test_01_volumetria.py`.
+2. **Rastreabilidade (BD2)** — Correlation ID; log estruturado; X-Response-Time. Suite: `test_02_rastreabilidade.py`.
+
+Eles são detalhados nos documentos 02 e 03. O mapa (01) cobre ainda os **quatro** drivers: Volumetria, Rastreabilidade, Acesso Simultâneo (BD3) e Segurança (BD4).
 
 ## Como executar os testes (aferir qualidade)
 

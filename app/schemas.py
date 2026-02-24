@@ -5,7 +5,7 @@ import re
 from datetime import datetime
 from typing import Optional
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
 class ProdutoBase(BaseModel):
@@ -26,11 +26,10 @@ class ProdutoUpdate(BaseModel):
 
 
 class ProdutoResponse(ProdutoBase):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     version: int
-
-    class Config:
-        from_attributes = True
 
 
 class NotaFiscalBase(BaseModel):
@@ -54,12 +53,11 @@ class NotaFiscalCreate(NotaFiscalBase):
 
 
 class NotaFiscalResponse(NotaFiscalBase):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     status: str
     data_emissao: datetime
-
-    class Config:
-        from_attributes = True
 
 
 class BuscaNotaParams(BaseModel):

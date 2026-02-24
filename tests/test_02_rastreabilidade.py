@@ -6,8 +6,6 @@ Requisitos: REQ-BD2-R1 a REQ-BD2-R5 (ver 01-mapa-business-drivers.md).
 """
 import uuid
 
-import pytest
-
 from tests.constants import HTTP_200, HTTP_404, ID_NOTAS_INEXISTENTE
 
 

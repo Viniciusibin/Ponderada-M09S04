@@ -9,6 +9,12 @@ Atividade ponderada do módulo M09S04: **documentar regras de negócio em códig
 - **Professor orientador:** Reginaldo Arakaki.
 - **Referência:** [asis-bd-lab](https://github.com/canaldoovidio/asis-bd-lab) — API com endpoints v1 (bugados) e v2 (corrigidos) para 4 Business Drivers.
 
+**Os dois direcionadores de negócio em foco nesta atividade** (detalhados nos documentos 02 e 03 e nas suites `test_01` e `test_02`) são:
+1. **Volumetria (BD1)** — listagem paginada; suporte a alto volume sem degradação.
+2. **Rastreabilidade (BD2)** — Correlation ID e log estruturado em toda requisição.
+
+O mapa (doc 01) cobre ainda **Acesso Simultâneo (BD3)** e **Segurança (BD4)**.
+
 ## Estrutura do repositório
 
 ```
@@ -43,6 +49,11 @@ Ponderada-M09S04/
 | **Mapa do Business Drivers** [3,0 pts] | Mapa dos direcionadores; identificadores REQ-BDx; regras em código; rastreabilidade requisito ↔ código ↔ teste. | [docs/01-mapa-business-drivers.md](docs/01-mapa-business-drivers.md) |
 | **Estratégia e massa de testes** [4,0 pts] | Estratégia; técnicas de projeto (equivalência, fronteira); massa de dados; casos para BD1 e BD2. | [docs/02-estrategia-massa-testes.md](docs/02-estrategia-massa-testes.md) |
 | **Codificação como documentação de testes** [3,0 pts] | Constantes, AAA, nomes, rastreabilidade; tabelas requisito ↔ teste ↔ asserção. | [docs/03-codificacao-documentacao-testes.md](docs/03-codificacao-documentacao-testes.md) |
+
+## Pré-requisitos
+
+- Python 3.11+ (recomendado para compatibilidade com dependências)
+- pip
 
 ## Como executar os testes
 

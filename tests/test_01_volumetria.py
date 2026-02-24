@@ -5,14 +5,10 @@ Regras de negócio: listagem paginada; limite máximo por página; sem N+1.
 Requisitos: REQ-BD1-V1 a REQ-BD1-V4 (ver 01-mapa-business-drivers.md).
 Técnicas: equivalência (limit válido/inválido), valor de fronteira (0, 1, 100, 101).
 """
-import pytest
-
 from tests.constants import (
     HTTP_200,
     HTTP_422,
     PAGINATION_DEFAULT_LIMIT,
-    PAGINATION_MAX_LIMIT,
-    PAGINATION_MIN_LIMIT,
     TOTAL_NOTAS_FIXTURE,
 )
 

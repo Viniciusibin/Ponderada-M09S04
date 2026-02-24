@@ -8,7 +8,6 @@ import pytest
 
 from tests.constants import (
     CNPJ_INVALIDO_CURTO,
-    CNPJ_VALIDO_14_DIGITOS,
     HTTP_200,
     HTTP_401,
     HTTP_422,

@@ -53,7 +53,7 @@ A API deve suportar listagem de grande volume de notas fiscais (50k+) sem degrad
 | REQ-BD1-V3 | Resposta deve conter no máximo `limit` itens. | `.limit(limit)` antes de `.all()`. |
 | REQ-BD1-V4 | Carregamento de itens da nota em uma única query (eager loading). | `joinedload(NotaFiscal.itens)` em `listar_notas_v2`. |
 
-**Aferição:** execução de `pytest tests/test_01_volumetria.py -v`. Casos de teste mapeados na seção 6.
+**Aferição:** execução de `pytest tests/test_01_volumetria.py -v`. Casos de teste mapeados na seção 5 (Rastreabilidade requisito ↔ código ↔ caso de teste).
 
 ---
 
@@ -128,14 +128,21 @@ Suite passando indica que a implementação v2 está em conformidade com as regr
 
 ---
 
-## 6. Foco da atividade (pelo menos 2 direcionadores)
+## 6. Foco da atividade: os dois direcionadores de negócio
+
+**Os dois direcionadores de negócio** detalhados nesta atividade (docs 02 e 03 e suites `test_01` e `test_02`) são:
+
+| # | Direcionador | ID | Arquivo de teste |
+|---|--------------|-----|------------------|
+| 1 | **Volumetria** | BD1 | `test_01_volumetria.py` |
+| 2 | **Rastreabilidade** | BD2 | `test_02_rastreabilidade.py` |
 
 Nos documentos **02-estrategia-massa-testes.md** e **03-codificacao-documentacao-testes.md** são detalhados em profundidade:
 
 1. **Volumetria (BD1)** — Estratégia de testes, massa de dados, técnicas de projeto (fronteira, equivalência) e codificação como documentação.
 2. **Rastreabilidade (BD2)** — Mesmo tratamento.
 
-Os drivers BD3 e BD4 permanecem mapeados neste documento e podem ser expandidos nos mesmos moldes.
+Os drivers **BD3 (Acesso Simultâneo)** e **BD4 (Segurança)** permanecem mapeados neste documento e podem ser expandidos nos mesmos moldes.
 
 ---
 
